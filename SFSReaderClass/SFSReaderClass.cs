@@ -16,7 +16,7 @@ namespace SFSReaderClass
         public Int32 sfsLinesCount; // the lines count of the sfs file
         public string errorMessage; // variable to store and show any error message
         public TreeNode nodeList = new TreeNode("SFS File"); // the root node name of the list view item
-        public string[,,,,] sfsIndex_Arr; // 5-d array to store all values and index them based on original line no. and treeview index
+        public string[,,,,] sfsFileIndex; // 5-d array to store all values and index them based on original line no. and treeview index
         //
         // private class variables that can only be access from inside the class
         private Int32 _privateLineCount;
