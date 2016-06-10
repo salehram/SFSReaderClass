@@ -14,7 +14,6 @@ namespace SFSReaderClass_Sample.Forms
     {
         // class-level definitions
         SFSReaderClass.SFSReaderClass readFile = new SFSReaderClass.SFSReaderClass();
-        SFSReaderClass.TreeHelpers getNodeIndex;
 
         public frmMain()
         {
@@ -65,8 +64,8 @@ namespace SFSReaderClass_Sample.Forms
 
         private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
         {
-            TreeNode currentNode = treeView1.Nodes[treeView1.SelectedNode.Index];
-            IList<TreeNode> nodeParent = getNodeIndex.GetAncestors(currentNode.Index, x => x.Parent).ToList();
+            TreeNode currentNode = treeView1.SelectedNode;
+            lblIndexInTV.Text = readFile.getNodePath(currentNode);
         }
     }
 }
