@@ -38,6 +38,10 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
             this.treeView1 = new System.Windows.Forms.TreeView();
+            this.label4 = new System.Windows.Forms.Label();
+            this.lblSFSLineNo = new System.Windows.Forms.Label();
+            this.lblIndexInTV = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnLoadSFSFile
@@ -114,7 +118,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(603, 75);
+            this.button1.Location = new System.Drawing.Point(365, 75);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(227, 49);
             this.button1.TabIndex = 6;
@@ -124,17 +128,57 @@
             // 
             // treeView1
             // 
-            this.treeView1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.treeView1.Location = new System.Drawing.Point(0, 130);
             this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(830, 439);
+            this.treeView1.Size = new System.Drawing.Size(592, 439);
             this.treeView1.TabIndex = 7;
+            this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(599, 130);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(144, 17);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "Line number in SFS file";
+            // 
+            // lblSFSLineNo
+            // 
+            this.lblSFSLineNo.AutoSize = true;
+            this.lblSFSLineNo.Location = new System.Drawing.Point(602, 151);
+            this.lblSFSLineNo.Name = "lblSFSLineNo";
+            this.lblSFSLineNo.Size = new System.Drawing.Size(84, 17);
+            this.lblSFSLineNo.TabIndex = 9;
+            this.lblSFSLineNo.Text = "lblSFSLineNo";
+            // 
+            // lblIndexInTV
+            // 
+            this.lblIndexInTV.AutoSize = true;
+            this.lblIndexInTV.Location = new System.Drawing.Point(602, 227);
+            this.lblIndexInTV.Name = "lblIndexInTV";
+            this.lblIndexInTV.Size = new System.Drawing.Size(83, 17);
+            this.lblIndexInTV.TabIndex = 10;
+            this.lblIndexInTV.Text = "lblIndexInTV";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(598, 210);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(115, 17);
+            this.label5.TabIndex = 11;
+            this.label5.Text = "Index in TreeView";
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(830, 569);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.lblIndexInTV);
+            this.Controls.Add(this.lblSFSLineNo);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.treeView1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox1);
@@ -165,5 +209,9 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TreeView treeView1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblSFSLineNo;
+        private System.Windows.Forms.Label lblIndexInTV;
+        private System.Windows.Forms.Label label5;
     }
 }

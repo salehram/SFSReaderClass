@@ -12,3 +12,11 @@ C:\Users\SalehRam\Google Drive\My Projects\C#\SFSReaderClass\SFSReaderClass-Samp
 C:\Users\SalehRam\Google Drive\My Projects\C#\SFSReaderClass\SFSReaderClass\SFSReaderClass-Sample\bin\Debug\SFSReaderClass-Sample.exe.config
 C:\Users\SalehRam\Google Drive\My Projects\C#\SFSReaderClass\SFSReaderClass\SFSReaderClass-Sample\obj\Debug\SFSReaderClass-Sample.exe
 C:\Users\SalehRam\Google Drive\My Projects\C#\SFSReaderClass\SFSReaderClass\SFSReaderClass-Sample\obj\Debug\SFSReaderClass-Sample.pdb
+C:\Users\SalehRam\Google Drive\My Projects\C#\SFSReaderClass\SFSReaderClass\SFSReaderClass-Sample\bin\Debug\SFSReaderClass-Sample.exe
+C:\Users\SalehRam\Google Drive\My Projects\C#\SFSReaderClass\SFSReaderClass\SFSReaderClass-Sample\bin\Debug\SFSReaderClass-Sample.pdb
+C:\Users\SalehRam\Google Drive\My Projects\C#\SFSReaderClass\SFSReaderClass\SFSReaderClass-Sample\bin\Debug\SFSReaderClass.dll
+C:\Users\SalehRam\Google Drive\My Projects\C#\SFSReaderClass\SFSReaderClass\SFSReaderClass-Sample\bin\Debug\SFSReaderClass.pdb
+C:\Users\SalehRam\Google Drive\My Projects\C#\SFSReaderClass\SFSReaderClass\SFSReaderClass-Sample\obj\Debug\SFSReaderClass-Sample.csprojResolveAssemblyReference.cache
+C:\Users\SalehRam\Google Drive\My Projects\C#\SFSReaderClass\SFSReaderClass\SFSReaderClass-Sample\obj\Debug\SFSReaderClass_Sample.Forms.frmMain.resources
+C:\Users\SalehRam\Google Drive\My Projects\C#\SFSReaderClass\SFSReaderClass\SFSReaderClass-Sample\obj\Debug\SFSReaderClass_Sample.Properties.Resources.resources
+C:\Users\SalehRam\Google Drive\My Projects\C#\SFSReaderClass\SFSReaderClass\SFSReaderClass-Sample\obj\Debug\SFSReaderClass-Sample.csproj.GenerateResource.Cache

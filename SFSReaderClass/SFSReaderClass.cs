@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.IO;
 using System.Drawing;
 using System.Windows.Forms;
+using System.Data;
 
 namespace SFSReaderClass
 {
@@ -16,7 +17,9 @@ namespace SFSReaderClass
         public Int32 sfsLinesCount; // the lines count of the sfs file
         public string errorMessage; // variable to store and show any error message
         public TreeNode nodeList = new TreeNode("SFS File"); // the root node name of the list view item
-        public string[,,,,] sfsFileIndex; // 5-d array to store all values and index them based on original line no. and treeview index
+        public string[,,,] sfsFileIndex; // 5-d array to store all values and index them based on original line no. and treeview index
+        public DataTable sfsFile_Table = new DataTable("sfsFile_Table");
+        public DataSet SFSFile_Dataset = new DataSet("sfsFile_Dataset");
         //
         // private class variables that can only be access from inside the class
         private Int32 _privateLineCount;
@@ -73,6 +76,7 @@ namespace SFSReaderClass
             List<TreeNode> nodeStructure = new List<TreeNode>(); // list to add nodes and sub nodes in
             string matchText=""; // the actual text of the node without the tab characters
             string checkNextNode; // a string variable to check the next node if it is a closing bracket
+            //
             nodeStructure.Add(nodeObject); //adding the first node item to a list to work with it
             do
             {
@@ -116,10 +120,52 @@ namespace SFSReaderClass
                     default:
                         // not a closing bracket
                         nodeObject = nodeStructure[nodeLevel].Nodes.Add(lines[currentNode]);
+                        //
+                        // building the node index
+                        // the index is the combination of the node's index with the full path of its parents index
+                        IList<TreeNode> ancestorList = TreeHelpers.GetAncestors(nodeObject, x => x.Parent).ToList();
+                        makeSFSIndex(currentNode.ToString(), lines[currentNode], ancestorList);
+                        // done building the node index
+                        // nodeList.Nodes
                         currentNode = currentNode + 1;
                         break;
                 }
             } while (currentNode < linesCount);
+        }
+
+        /// <summary>
+        /// Making the index of the SFS file
+        /// </summary>
+        /// <param name="LineTxt"></param>
+        /// <param name="nodeIndex"></param>
+        private void makeSFSIndex(string lineNumber, string LineText, IList<TreeNode> nodeParentsPath)
+        {
+            // preparing the node index in the tree
+            string NodeIndex=null; // variable to store the node index in the treenode array
+            string[] propertyValue = null; // array to store the property and value of each line
+            //MessageBox.Show(nodeParentsPath.Count.ToString());
+            foreach (var item in nodeParentsPath)
+            {
+                NodeIndex = NodeIndex + "." + item.Index.ToString();
+            }
+            // getting the actual line value to be splitted into 2 values:
+            // tab + property name, value
+            propertyValue = LineText.Split('=');
+            // preparing dataset
+            prepareDataSet();
+            // adding data into the array
+            sfsFile_Table.Rows.Add(lineNumber, propertyValue[0], propertyValue[1], NodeIndex);
+        }
+
+        private void prepareDataSet()
+        {
+            // creating tables
+            sfsFile_Table.Columns.Add("OriginalLineNo");
+            sfsFile_Table.Columns.Add("PropertName");
+            sfsFile_Table.Columns.Add("PropertyValue");
+            sfsFile_Table.Columns.Add("NodeIndex");
+            // filling the dataset
+            SFSFile_Dataset.Tables.Add(sfsFile_Table);
         }
     }
 }
