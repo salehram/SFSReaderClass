@@ -29,6 +29,8 @@ namespace SFSReaderClass
         {
             bool openFileStat=false;
             // preparing dataset
+            sfsFile_Table.Clear(); // clearing all rows form the table
+            SFSFile_Dataset.Clear(); // clearing all tables from the dataset
             prepareDataSet();
             try
             {
